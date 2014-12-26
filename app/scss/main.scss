@@ -40,6 +40,26 @@ button:focus {
     outline: none;
 }
 
+::-webkit-input-placeholder {
+   font-weight: 300;
+   color: $grey;
+}
+
+:-moz-placeholder { 
+   font-weight: 300;
+   color: $grey;  
+}
+
+::-moz-placeholder { 
+   font-weight: 300;
+   color: $grey;  
+}
+
+:-ms-input-placeholder {  
+   font-weight: 300;
+   color: $grey;  
+}
+
 .search-field {
   width: 285px;
   padding: 10px 10px 5px 2px;
@@ -51,7 +71,11 @@ button:focus {
 }
 
 .btn:hover {
-  color: $blue;
+  color: $grey;
+}
+
+.top-result {
+  display: none;
 }
 
 .category {

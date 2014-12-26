@@ -24,10 +24,11 @@ $(document).on('ready', function() {
 
       console.log(topVenue);
 
+      $('.top-result').fadeIn();
       $('.result strong').text(venue.name);
       $('.location').text(venue.address);
       $('.url').text(venue.url);
-      $('.category').removeClass('u-hidden').html('<img src="' + venue.icon + '64.png">');
+      $('.category').html('<img src="' + venue.icon + '64.png">');
 
     });
 
