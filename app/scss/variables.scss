@@ -4,9 +4,11 @@ $yellow: #FFF76A;
 $blue: #ABE7FF;
 
 // Space
-$large-space: 80px;
-$medium-space: $large-space / 2;
-$small-space: $large-space / 4;
+$medium-space: 24px;
+$large-space: $medium-space * 1.5;
+$x-large-space: $medium-space * 2;
+$small-space: $medium-space / 2;
+$x-small-space: $medium-space / 3;
 
 // Type
 $primary-font: "brandon-grotesque", sans-serif;
