@@ -210,6 +210,14 @@
   position: relative;
 }
 
+.u-show {
+  display: block;
+}
+
+.u-hidden {
+  display: none;
+}
+
 .u-center {
   margin-left: auto;
   margin-right: auto;
@@ -245,12 +253,24 @@
 
 // COLOR
 
+.u-text-dark-grey {
+  color: $dark-grey;
+}
+
+.u-text-primary {
+  color: $primary-color;
+}
+
 
 // TYPOGRAPHY
 
+h1 {
+  font-size: $large-space;
+}
+
 .u-text-body {
 	font-size: 16px;
-	line-height: 24px;
+	line-height: 22px;
 }
 
 // LINKS

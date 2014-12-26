@@ -27,7 +27,7 @@ $(document).on('ready', function() {
       $('.result strong').text(venue.name);
       $('.location').text(venue.address);
       $('.url').text(venue.url);
-      $('.category').html('<img src="' + venue.icon + 'bg_32.png">');
+      $('.category').removeClass('u-hidden').html('<img src="' + venue.icon + '64.png">');
 
     });
 
@@ -35,7 +35,7 @@ $(document).on('ready', function() {
 
   $('#search-form').on('submit', function() {
 
-    var searchQuery = $('#search-field').val().trim();
+    var searchQuery = $('.search-field').val().trim();
     searchFoursquare(searchQuery);
     console.log(searchQuery);
 

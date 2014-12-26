@@ -8,17 +8,29 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: $background;
+  color: $dark-grey;
+  font-size: $medium-space;
+}
+
 .container {
-	width: 600px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	width: 320px;
+	position: relative;
+	margin: 0 auto;
+  margin-top: 200px;
+}
+
+#search-form {
+  width: 320px;
+  border-bottom: 2px solid black; 
 }
 
 input {
-  height: 20px;
-  padding: 20px 20px;
+  color: black;
+  border: 0px;
+  height: auto;
+  background: transparent;
 }
 
 input:focus,
@@ -28,10 +40,31 @@ button:focus {
     outline: none;
 }
 
-input[type=text] {
-  border: 0px;
-  border-bottom: 2px solid black; 
-  height: auto;
+.search-field {
+  width: 285px;
   padding: 10px 10px 5px 2px;
   background: transparent;
+}
+
+.btn {
+  padding-bottom: 0px
+}
+
+.btn:hover {
+  color: $blue;
+}
+
+.category {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background-color: $primary-color;
+  border-radius: 50%;
+  padding-top: 8px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.category img {
+  max-width: 32px;
 }
