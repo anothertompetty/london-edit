@@ -1,38 +1,6 @@
 $(document).on('ready', function() {
 
-  // Get user's location
-
-  function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        console.log('this didn\'t work');
-    }
-  };
-
-  function showPosition(position) {
-    console.log('Latitude: ' + position.coords.latitude + ', Longitude: ' + position.coords.longitude); 
-  };
-
-  console.log(getLocation());
-
-  // Api GET function
-
-  // function debug() {
-    
-  //   $.getJSON('https://api.foursquare.com/v2/venues/explore?client_id=VN4Y3OWHFGUGYXOGB2KDS4A50PZP31RG1DNSDWDGK0NVW0ZZ&client_secret=IZQHG5ZVLA3M220YAJAOJN4O2RR45BBGWXJT2JXOJU00JBHU&v=20130815&ll=51.562771299999994,-0.0792068&radius=100&query=sushi', function(theResponse) {
-
-  //     if (theResponse.response.hasOwnProperty('warning')) {
-  //       console.log(theResponse.response.warning.text);
-  //     } else {
-  //       console.log(theResponse);
-  //     };
-
-  //   });
-
-  // };
-
-  // debug();
+  // Function to GET results from API endpoint
 
   function searchFoursquare(exactPosition, radius, searchTerm) {
 
@@ -79,18 +47,70 @@ $(document).on('ready', function() {
 
   };
 
-  // Run above function on form submit
+  // Get user's location (start by checking if you can / are allowed)
 
-  $('#search-form').on('submit', function() {
+  function getLocation() {
 
-    var latAndLong = '51.5627849,-0.0791954';
-    var radiusInMeters = '100';
-    var searchQuery = $('.search-field').val().trim();
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    } else {
+        $('.error').fadeIn().text('Sorry, your browser doesn\'t support location sharing');
+    }
 
-    searchFoursquare(latAndLong, radiusInMeters, searchQuery);
+  };
+
+  // If permission granted, do something with the location
+
+  function successCallback(position) {
+
+    var myPosition = position.coords.latitude + ',' + position.coords.longitude;
     
-    return false;
+    // Run API call on form submit
 
-  });
+    $('#search-form').on('submit', function() {
+
+      var latAndLong = myPosition;
+      var radiusInMeters = '500';
+      var searchQuery = $('.search-field').val().trim();
+
+      searchFoursquare(latAndLong, radiusInMeters, searchQuery);
+      
+      return false;
+
+    });
+
+  };
+
+  // If something weird, handle errors
+
+  function errorCallback(error) {
+
+    var errorText = $('.error')
+
+    switch(error.code) {
+
+      case error.PERMISSION_DENIED:
+          errorText.fadeIn().text('In order to see the best things near you, we need permission to see your location')
+          break;
+
+      case error.POSITION_UNAVAILABLE:
+          errorText.fadeIn().text('Location information is unavailable.')
+          break;
+
+      case error.TIMEOUT:
+          errorText.fadeIn().text('The request to get your location timed out.')
+          break;
+
+      case error.UNKNOWN_ERROR:
+          errorText.fadeIn().text('A crazy, unknown error occurred.')
+          break;
+
+    }
+
+  };
+
+  // Run the function to get user's location
+
+  getLocation();
 
 });
