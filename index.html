@@ -12,6 +12,14 @@
 
     <div class="container">
 
+      <label for="radius__slider" class="u-text-small u-margin-Bm">
+        How far are you willing to walk?
+      </label>
+      <input type="range" id="radius__slider" 
+      min="300" value="1000" max="10000" 
+      onchange="radiusOutput(value)">
+      <output for="radius__slider" class="radius__output u-text-small">300</output>
+
       <form id="search-form">
         <input placeholder="What are you looking for?" class="search-field" type="text" autofocus="true">
         <input type="submit" class="btn" value="&#10095;">
@@ -33,6 +41,12 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="build/js/app.min.js"></script>
     <script src="//localhost:35729/livereload.js"></script>
+    <script>
+      function radiusOutput(sliderValue) {
+        document.querySelector('.radius__output').value = sliderValue;
+        console.log(sliderValue)
+      }
+    </script>
 
   </body>
 </html>

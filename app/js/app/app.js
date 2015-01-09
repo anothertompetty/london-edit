@@ -70,7 +70,7 @@ $(document).on('ready', function() {
     $('#search-form').on('submit', function() {
 
       var latAndLong = myPosition;
-      var radiusInMeters = '500';
+      var radiusInMeters = $('.radius__output').text();
       var searchQuery = $('.search-field').val().trim();
 
       searchFoursquare(latAndLong, radiusInMeters, searchQuery);
