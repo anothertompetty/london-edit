@@ -16,7 +16,7 @@
         How far are you willing to walk?
       </label>
       <input type="range" id="radius__slider" 
-      min="300" value="1000" max="10000" 
+      min="300" value="1000" max="6000" 
       onchange="radiusOutput(value)">
       <output for="radius__slider" class="radius__output u-text-small">300</output>
 
@@ -36,6 +36,8 @@
 
       <div class="error u-text-small u-margin-Tm"></div>
 
+      <div class="circle"></div>
+
     </div>
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
@@ -45,7 +47,11 @@
       function radiusOutput(sliderValue) {
         document.querySelector('.radius__output').value = sliderValue;
         console.log(sliderValue)
-      }
+        $('.circle').css({
+          'width' : sliderValue / 10 + 'px', 
+          'height' : sliderValue / 10 + 'px'
+        });
+      };
     </script>
 
   </body>

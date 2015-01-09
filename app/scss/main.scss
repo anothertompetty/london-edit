@@ -97,3 +97,16 @@ button:focus {
   display: none;
   color: red;
 }
+
+.circle {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left: 20px;
+  text-align: center;
+  background-color: red;
+  border-radius: 50%;
+  z-index: -100;
+  opacity: 0.1;
+}
