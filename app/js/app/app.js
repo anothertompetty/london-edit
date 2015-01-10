@@ -4,6 +4,9 @@ $(document).on('ready', function() {
 
   function searchFoursquare(exactPosition, radius, searchTerm) {
 
+    var topResult = $('.top-result')
+    var errorText = $('.error')
+
     var baseUrl = 'https://api.foursquare.com/v2/venues/explore'
     var token = 'VN4Y3OWHFGUGYXOGB2KDS4A50PZP31RG1DNSDWDGK0NVW0ZZ';
     var secret = 'IZQHG5ZVLA3M220YAJAOJN4O2RR45BBGWXJT2JXOJU00JBHU';
@@ -15,6 +18,11 @@ $(document).on('ready', function() {
               '&radius=' + radius + 
               '&query=' + searchTerm;
     
+    topResult.css('display', 'none');
+    errorText.css('display', 'none');
+
+    // API call (what you put in, callbackfunction(returnedobject))
+
     $.getJSON(url, function(json) {
 
       var response = json.response
@@ -28,10 +36,10 @@ $(document).on('ready', function() {
       };
 
       // Check to make sure there's a result
-      
+
       if (response.hasOwnProperty('warning')) { 
 
-        $('.error').fadeIn().text(response.warning.text);
+        errorText.fadeIn().text(response.warning.text);
 
       } else {
 
