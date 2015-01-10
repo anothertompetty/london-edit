@@ -37,27 +37,27 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 ::-webkit-input-placeholder {
-   font-weight: 300;
-   color: $grey;
+  font-weight: 300;
+  color: $grey;
 }
 
 :-moz-placeholder { 
-   font-weight: 300;
-   color: $grey;  
+  font-weight: 300;
+  color: $grey;  
 }
 
 ::-moz-placeholder { 
-   font-weight: 300;
-   color: $grey;  
+  font-weight: 300;
+  color: $grey;  
 }
 
 :-ms-input-placeholder {  
-   font-weight: 300;
-   color: $grey;  
+  font-weight: 300;
+  color: $grey;  
 }
 
 .search-field {
@@ -106,8 +106,39 @@ button:focus {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-color: red;
+  border: 1px solid red;
   border-radius: 50%;
   z-index: -100;
-  opacity: 0.1;
+}
+
+// Input slider
+
+input[type="range"] {
+  -webkit-appearance: none !important; /* Reset default slider styles */
+  width: 270px;
+  height: 1px;
+  background-color: #0790E9;
+  border: 1px solid darken(#0790E9, 4%);
+  margin: auto;
+  transition: all 0.3s ease;
+
+    &:hover {
+      background-color: lighten(#0790E9, 5%);
+    }
+  }
+  
+  // &:active + #rangevalue /*Here to do something to the value while moving the slider */
+
+  
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;  
+  width: 26px;
+  height: 26px;
+  background-color: #FF3934;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+  
+  &:hover {
+    background-color: darken(#FF3934, 10%);
+  }
 }
