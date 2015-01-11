@@ -2,12 +2,28 @@ module.exports = function(grunt) {
 
   "use strict";
 
+  grunt.loadNpmTasks("grunt-postcss");
   grunt.loadNpmTasks("grunt-contrib-sass");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-contrib-watch");
 
+  var autoprefixer = require('autoprefixer-core');
+  
   grunt.initConfig({
+
+    postcss: {
+      options: {
+        processors: [
+          autoprefixer({ browsers: ['last 2 version'] }).postcss
+        ]
+      },
+
+      dist: { 
+        src: 'app/scss/main.scss',
+        dest: 'app/scss/main-prefixed.scss' 
+      }
+    },
 
     sass: {
 
@@ -18,7 +34,7 @@ module.exports = function(grunt) {
         },
 
         files : {
-          "build/css/app.min.css": "app/scss/main.scss"
+          "build/css/app.min.css": "app/scss/main-prefixed.scss"
         }
       }
     },
@@ -67,5 +83,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask("make", ["sass:dev", "uglify:dev", "connect:server", "watch"]);
+  grunt.registerTask("make", ["postcss", "sass:dev", "uglify:dev", "connect:server", "watch"]);
 };
