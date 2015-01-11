@@ -1,6 +1,6 @@
 <!DOCTYPE html>
   <head>
-    <title>The London Edit</title>
+    <title>Best Near Me</title>
     <meta name="description" content="Tom Petty is an independent designer and strategist in London.">
     <meta name="author" content="Tom Petty - @tp">
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
@@ -10,34 +10,42 @@
   </head>
   <body>
 
-    <div class="container">
-
-      <label for="radius__slider" class="u-text-small u-margin-Bm">
-        How far are you willing to walk?
-      </label>
-      <input type="range" id="radius__slider" 
-      min="300" value="1000" max="6000" 
-      onchange="radiusOutput(value)">
-      <output for="radius__slider" class="radius__output u-text-small">300</output>
-
-      <form id="search-form">
-        <input placeholder="What are you looking for?" class="search-field" type="text" autofocus="true">
-        <input type="submit" class="btn" value="&#10095;">
-      </form>
-      
-      <div class="top-result">
-        <div class="category u-pull-start u-margin-Rm"></div>
-        <div class="u-pull-start u-text-body u-margin-Tm">
-          <div class="result"><strong></strong></div>
-          <div class="location"></div>
-          <div class="url"></div>
+    <div class="container__outside--input">
+      <div class="container__inside u-text-center">
+        
+        <div class="radius">
+          <label for="radius__slider" class="u-margin-Bm">
+            How long are you willing to walk for?
+          </label>
+          <input type="range" id="radius__slider" 
+          min="300" value="3000" max="6000" 
+          onchange="radiusOutput(value)">
         </div>
+        <output for="radius__slider" class="radius__output u-text-small u-text-center">3000</output>
+
+        <div class="circle"></div>
+
+        <form class="search-form u-margin-Tm">
+          <input placeholder="What are you looking for?" 
+          class="search-field" type="text" autofocus="true">
+          <input type="submit" class="btn" value="&#10095;">
+        </form>
+
       </div>
+    </div>
 
-      <div class="error u-text-small u-margin-Tm"></div>
-
-      <div class="circle"></div>
-
+    <div class="container__outside--output">
+      <div class="container__inside">
+        <div class="top-result">
+          <div class="category u-pull-start u-margin-Rm"></div>
+          <div class="u-pull-start u-text-body u-margin-Tm">
+            <div class="result"><strong></strong></div>
+            <div class="location"></div>
+            <div class="url"></div>
+          </div>
+        </div>
+        <div class="error u-text-small u-margin-Tm"></div>
+      </div>
     </div>
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>

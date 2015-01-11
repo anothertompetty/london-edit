@@ -75,7 +75,7 @@ $(document).on('ready', function() {
     
     // Run API call on form submit
 
-    $('#search-form').on('submit', function() {
+    $('.search-form').on('submit', function() {
 
       var latAndLong = myPosition;
       var radiusInMeters = $('.radius__output').text();
