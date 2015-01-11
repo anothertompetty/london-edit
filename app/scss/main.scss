@@ -27,8 +27,8 @@ body {
 }
 
 .container__inside {
-	width: 300px;
 	position: relative;
+  width: 300px;
 	margin: 0 auto;
   margin-top: 100px;
 }
@@ -39,13 +39,26 @@ body {
 
 .radius__output {
   position: absolute;
-  margin-top: -150px;
+  width: 245px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.radius__output--image {
+  display: block;
+  margin: 0 auto;
 }
 
 .circle {
   position: absolute;
   width: 192px;
   height: 192px;
+  min-height: 120px; // min-width defined in js
+  max-height: 280px; // max-width defined in js
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);

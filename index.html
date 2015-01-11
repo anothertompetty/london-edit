@@ -20,9 +20,11 @@
           <input type="range" id="radius__slider" min="300" value="3000" max="6000" 
           onchange="radiusOutput(value)">
         </div>
-        <output for="radius__slider" class="radius__output u-text-small u-text-center">
-          3000
-        </output>
+
+        <div class="radius__output">
+          <img src="img/man.svg" class="radius__output--image">
+          <output for="radius__slider" class="radius__output--val u-text-small u-text-center">3000</output>
+        </div>
 
         <div class="circle"></div>
 
@@ -54,11 +56,13 @@
     <script src="//localhost:35729/livereload.js"></script>
     <script>
       function radiusOutput(sliderValue) {
-        document.querySelector('.radius__output').value = sliderValue;
+        document.querySelector('.radius__output--val').value = sliderValue;
         console.log(sliderValue)
         $('.circle').css({
-          'width' : sliderValue / 20 + 'px', 
-          'height' : sliderValue / 20 + 'px',
+          'width' : sliderValue / 18 + 'px', 
+          'height' : sliderValue / 18 + 'px',
+          'min-width' : '120px',
+          'max-width' : '280px',
           'top' : '50%',
           'left' : '50%',
           'transform' : 'translate(-50%, -50%)'

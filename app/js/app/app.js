@@ -60,9 +60,13 @@ $(document).on('ready', function() {
   function getLocation() {
 
     if (navigator.geolocation) {
+
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
     } else {
-        $('.error').fadeIn().text('Sorry, your browser doesn\'t support location sharing');
+
+        $('.error').fadeIn().text('Sorry, your browser does not support location sharing');
+
     }
 
   };
