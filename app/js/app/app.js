@@ -74,15 +74,17 @@ $(document).on('ready', function() {
   // If permission granted, do something with the location
 
   function successCallback(position) {
-
-    var myPosition = position.coords.latitude + ',' + position.coords.longitude;
     
-    // Run API call on form submit
+    // Can now run API call on form submit
 
     $('.search-form').on('submit', function() {
 
-      var latAndLong = myPosition;
-      var radiusInMeters = $('.radius__output').text();
+      // Get position from html5 api call
+      // Get radius in meters by converting text to integer and multiplying back by 100
+      // Get query from search input, and lose whitespace
+      
+      var latAndLong = position.coords.latitude + ',' + position.coords.longitude;
+      var radiusInMeters = parseInt( $('.radius__output--val').text() ) * 100;
       var searchQuery = $('.search-field').val().trim();
 
       searchFoursquare(latAndLong, radiusInMeters, searchQuery);

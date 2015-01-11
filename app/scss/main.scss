@@ -11,6 +11,7 @@
 body {
   background-color: $background;
   color: $dark-grey;
+  font-family: $primary-font;
   font-size: 16px;
 }
 
@@ -30,7 +31,7 @@ body {
 	position: relative;
   width: 300px;
 	margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 170px;
 }
 
 .radius {
