@@ -32,7 +32,7 @@ $(document).on('ready', function() {
         name : topVenue.venue.name,
         address : topVenue.venue.location.address,
         url : topVenue.venue.url,
-        icon : topVenue.venue.categories[0].icon.prefix 
+        icon : topVenue.venue.categories[0].icon.prefix, 
       };
 
       // Check to make sure there's a result
@@ -42,6 +42,11 @@ $(document).on('ready', function() {
         errorText.fadeIn().text(response.warning.text);
 
       } else {
+
+        $('.container__outside--input').animate({
+          'position' : 'relative',
+          'width' : '50%'
+        }, 400);
 
         $('#top-result').fadeIn();
         $('#result').text(venue.name);

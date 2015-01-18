@@ -265,6 +265,10 @@
 
 // TYPOGRAPHY
 
+.u-text-upper {
+  text-transform: uppercase;
+}
+
 .u-text-body {
 	font-size: 16px;
 	line-height: 22px;
@@ -290,4 +294,12 @@
 
 .u-text-right {
   text-align: right;
+}
+
+.u-text-primary {
+  color: $primary-color;
+}
+
+.u-text-white {
+  color: white;
 }
