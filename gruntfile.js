@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         },
 
         files: {
-          "build/js/app.min.js" : ["app/js/libs/jquery-1.11.2.min.js", "app/js/app/app.js"]
+          "build/js/app.min.js" : ["app/js/libs/jquery-1.11.2.min.js", "app/js/libs/jquery.scrollTo.min.js", "app/js/app/app.js"]
         }
       }
     },

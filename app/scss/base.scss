@@ -1,0 +1,59 @@
+@import "variables";
+
+// ------------------------------------
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: $background;
+  color: $dark-grey;
+  font-family: $primary-font-regular;
+  font-size: 16px;
+}
+
+.container__outside--input {
+  width: 100%;
+  height: 100%;
+  float: left;
+  background-color: #FFF0F3;
+}
+
+.container__outside--output {
+  display: none;
+  width: 50%;
+  float: left;
+  background-color: #F7F9FA;
+}
+
+.container__inside--input {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 170px;
+}
+
+.container__inside--output {
+  @extend .container__inside--input;
+  width: 300px;
+}
+
+@media screen and (max-width: 700px) {
+  
+  .container__outside--input, .container__outside--output {
+    width: 100%;
+    clear: both;
+  }
+
+  .container__inside--input, .container__inside--output {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+}

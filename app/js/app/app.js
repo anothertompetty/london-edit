@@ -27,38 +27,80 @@ $(document).on('ready', function() {
 
       var response = json.response
       var venueList = response.groups[0].items;
-      var topVenue = venueList[0];
+      var topVenue = venueList[0].venue;
       var venue = {
-        name : topVenue.venue.name,
-        address : topVenue.venue.location.address,
-        url : topVenue.venue.url,
-        icon : topVenue.venue.categories[0].icon.prefix, 
+        name : topVenue.name,
+        address : topVenue.location.address,
+        url : topVenue.url,
+        icon : topVenue.categories[0].icon.prefix,
+        position : topVenue.location.lat + ',' + topVenue.location.lng
       };
+      var mapUrl = 'http://maps.googleapis.com/maps/api/staticmap?center=' + 
+                    venue.position + 
+                   '&zoom=14' + 
+                   '&size=300x250' + 
+                   '&markers=color:blue%7C' + venue.position + 
+                   '&sensor=false';
 
-      // Check to make sure there's a result
+      
+      // function that adds response results into DOM
 
-      if (response.hasOwnProperty('warning')) { 
-
-        errorText.fadeIn().text(response.warning.text);
-
-      } else {
-
-        $('.container__outside--input').animate({
-          'position' : 'relative',
-          'width' : '50%'
-        }, 400);
+      function displayResults() {
 
         $('#top-result').fadeIn();
+        $('.container__outside--output').fadeIn();
+        $('#map').html('<img src=' + mapUrl + '>');
         $('#result').text(venue.name);
         $('#location').text(venue.address);
         $('#url').html('<a href="' + venue.url + '" target="_blank">Vist website</a>');
         $('#category').html('<img src="' + venue.icon + '64.png">');
-
+      
       };
 
-    });
+      // run different conditionals depending on browser width
+      // firstly, if it's > 700px
 
-  };
+      if ( $('.container__inside--input').css('margin-top') != '50px' ) {
+
+        // Check to make sure there's a venue in results
+
+        if (response.hasOwnProperty('warning')) { 
+
+          errorText.fadeIn().text(response.warning.text);
+
+        } else {
+
+          // if so, slide output view in, and fade in results function as callback
+
+          $('.container__outside--input').animate({
+            'position' : 'relative',
+            'width' : '50%'
+          }, 
+            400, 
+            displayResults()
+          );
+
+        };
+
+        // if it's < 700px, do same, but scroll to section, don't animate
+      } else {
+
+        if (response.hasOwnProperty('warning')) { 
+
+          errorText.fadeIn().text(response.warning.text);
+
+        } else {
+
+          displayResults();
+          $('body, html').scrollTo(500); 
+
+        }
+
+      }; 
+
+    }); // close ajax call
+
+  }; //close main function
 
   // Get user's location (start by checking if you can / are allowed)
 

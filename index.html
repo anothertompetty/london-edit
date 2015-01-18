@@ -11,10 +11,10 @@
   <body>
 
     <div class="container__outside--input">
-      <div class="container__inside u-text-center">
+      <div class="container__inside--input u-text-center">
         
         <div class="radius">
-          <label for="radius__slider">
+          <label for="radius__slider u-text-upper">
             How long are you willing to walk for?
           </label>
           <input type="range" id="radius__slider" min="1000" value="3500" max="6000" 
@@ -44,11 +44,11 @@
 
         <div id="top-result u-text-body u-margin-Tm">
           <div class="u-text-body u-margin-Tm">
-            <div class="u-text-body">The best near you:</div>
+            <div id="map" class="output__venue--map"></div>
             <!-- <span id="category" class="output__venue--category u-pull-start u-margin-Rs"></span> -->
-            <div id="result" class="output__venue output__box u-text-upper"></div>
+            <div id="result" class="output__venue output__box u-truncate u-text-upper"></div>
             <div id="location" class="output__venue--details output__box"></div>
-            <div id="url" class="output__venue--details output__btn u-text-white u-text-upper"></div>
+            <div id="url" class="output__venue--details output__btn"></div>
           </div>
         </div>
         

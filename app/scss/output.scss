@@ -13,6 +13,7 @@
 
 .output__venue {
   font-family: 'Brandon Text Bold';
+  overflow: hidden;
 }
 
 .output__venue--category {
@@ -42,10 +43,21 @@
   margin-bottom: -1px;
   border: 1px solid #0790E9;
   color: #0790E9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .output__btn {
   @extend .output__box;
   margin-top: $small-space;
   background-color: #0790E9;
+}
+
+.output__btn {
+  color: white;
+}
+
+.output__venue--map {
+  margin-bottom: 6px;
 }
