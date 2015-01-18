@@ -1,0 +1,38 @@
+@import "variables";
+
+// -------------------------
+
+#top-result {
+  display: none;
+}
+
+.error {
+  display: none;
+  color: red;
+}
+
+.output__venue {
+  font-family: 'Brandon Text Bold';
+  font-size: $large-space;
+  text-transform: uppercase;
+  margin-bottom: $medium-space;
+}
+
+.output__venue--category {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  background-color: $primary-color;
+  border-radius: 50%;
+  padding-top: 8px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.output__venue--category img {
+  max-width: 32px;
+}
+
+.output__venue--details {
+
+}

@@ -1,0 +1,122 @@
+@import "variables";
+
+// -------------------------
+
+.search-form {
+  width: 300px;
+  background-color: #fff; 
+}
+
+input {
+  color: #0790E9;
+  border: 0px;
+  height: $large-space;
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+
+}
+
+::-webkit-input-placeholder {
+  font-weight: 300;
+  color: #0790E9;
+}
+
+:-moz-placeholder { 
+  font-weight: 300;
+  color: #0790E9;  
+}
+
+::-moz-placeholder { 
+  font-weight: 300;
+  color: #0790E9;  
+}
+
+:-ms-input-placeholder {  
+  font-weight: 300;
+  color: #0790E9;  
+}
+
+.search-field {
+  width: 265px;
+  padding: 10px 10px 5px 2px;
+  background: transparent;
+}
+
+.btn {
+  padding-bottom: 0px
+}
+
+.btn:hover {
+  color: $grey;
+}
+
+// Input slider
+
+input[type="range"] {
+  -webkit-appearance: none !important; /* Reset default slider styles */
+  width: 270px;
+  height: 1px;
+  background-color: #0790E9;
+  margin: auto;
+  transition: all 0.3s ease;
+
+    &:hover {
+      background-color: lighten(#0790E9, 5%);
+    }
+  }
+    
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;  
+  width: 26px;
+  height: 26px;
+  background-color: #FF3934;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+  
+  &:hover {
+    background-color: darken(#FF3934, 10%);
+  }
+}
+
+// radius circle
+
+.radius {
+  margin-bottom: 300px;
+}
+
+.radius__output {
+  position: absolute;
+  width: 245px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.radius__output--image {
+  display: block;
+  margin: 0 auto;
+}
+
+.radius__output--circle {
+  position: absolute;
+  width: 192px;
+  height: 192px;
+  min-height: 120px; // min-width defined in js
+  max-height: 280px; // max-width defined in js
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 50%;
+}

@@ -7,8 +7,6 @@
     <meta name="viewport" content="initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="build/css/app.min.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <script src="//use.typekit.net/niy7idk.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
   </head>
   <body>
 
@@ -30,7 +28,7 @@
           </div> 
         </div>
 
-        <div class="circle"></div>
+        <div class="radius__output--circle"></div>
 
         <form class="search-form u-margin-Tm">
           <input placeholder="What are you looking for?" 
@@ -43,15 +41,18 @@
 
     <div class="container__outside--output">
       <div class="container__inside">
-        <div class="top-result">
-          <div class="category u-pull-start u-margin-Rm"></div>
+
+        <div id="top-result">
+          <div id="category" class="output__venue--category u-pull-start u-margin-Rm"></div>
           <div class="u-pull-start u-text-body u-margin-Tm">
-            <div class="result"><strong></strong></div>
-            <div class="location"></div>
-            <div class="url"></div>
+            <div id="result" class="output__venue"></div>
+            <div id="location" class="output__venue--details"></div>
+            <div id="url" class="output__venue--details"></div>
           </div>
         </div>
+        
         <div class="error u-text-small u-margin-Tm"></div>
+
       </div>
     </div>
 
@@ -69,7 +70,7 @@
         
         // divide value by 18, and use as dimensions of circle
 
-        $('.circle').css({
+        $('.radius__output--circle').css({
           'width' : sliderValue / 18 + 'px', 
           'height' : sliderValue / 18 + 'px',
           'min-width' : '120px',

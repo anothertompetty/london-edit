@@ -1,10 +1,16 @@
+@import "fonts";
+
+// ---------------------------------------
+
 // Color
+
 $primary-color: #FF7171;
 $grey: #D8D8D8;
 $dark-grey: #2B2B2B;
 $background: #FAFAFA;
 
 // Space
+
 $medium-space: 24px;
 $large-space: $medium-space * 1.5;
 $x-large-space: $medium-space * 2;
@@ -12,5 +18,7 @@ $small-space: $medium-space / 2;
 $x-small-space: $medium-space / 3;
 
 // Type
-$primary-font: "brandon-grotesque", sans-serif;
-$secondary-font: "minion-pro", "Georgia", serif;
+
+$primary-font-regular: 'Brandon Text Regular', 'helvetica', sans-serif;
+$primary-font-light: 'Brandon Text Light', 'helvetica', sans-serif;
+$primary-font-bold: 'Brandon Text Bold', 'helvetica', sans-serif;

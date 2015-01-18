@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Brandon Text light';
+  font-style: normal;
+  font-weight: 200;
+  src: local('BrandonText-light'), url(/app/scss/BrandonText-light.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Brandon Text Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('BrandonText-Regular'), url(/app/scss/BrandonText-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Brandon Text Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('BrandonText-Bold'), url(/app/scss/BrandonText-Bold.woff) format('woff');
+}

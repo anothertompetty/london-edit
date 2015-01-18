@@ -1,0 +1,26 @@
+@import "variables";
+
+// ---------------------------------------
+
+h1 {
+  font-size: $large-space;
+}
+
+h2 {
+	font-size: $medium-space;
+}
+
+a, 
+a:link, 
+a:visited, 
+a:hover, 
+a:active {
+  text-decoration: none;
+  color: $dark-grey;
+  border-bottom: 1px solid #0790E9;
+}
+
+a:hover, 
+a:active {
+  color: $primary-color;
+}

@@ -4,7 +4,7 @@ $(document).on('ready', function() {
 
   function searchFoursquare(exactPosition, radius, searchTerm) {
 
-    var topResult = $('.top-result')
+    var topResult = $('#top-result')
     var errorText = $('.error')
 
     var baseUrl = 'https://api.foursquare.com/v2/venues/explore'
@@ -43,11 +43,11 @@ $(document).on('ready', function() {
 
       } else {
 
-        $('.top-result').fadeIn();
-        $('.result strong').text(venue.name);
-        $('.location').text(venue.address);
-        $('.url').text(venue.url);
-        $('.category').html('<img src="' + venue.icon + '64.png">');
+        $('#top-result').fadeIn();
+        $('#result').text(venue.name);
+        $('#location').text(venue.address);
+        $('#url').html('<a href="' + venue.url + '" target="_blank">Vist website</a>');
+        $('#category').html('<img src="' + venue.icon + '64.png">');
 
       };
 
@@ -104,20 +104,20 @@ $(document).on('ready', function() {
     switch(error.code) {
 
       case error.PERMISSION_DENIED:
-          errorText.fadeIn().text('In order to see the best things near you, we need permission to see your location')
-          break;
+        errorText.fadeIn().text('In order to see the best things near you, we need permission to see your location')
+        break;
 
       case error.POSITION_UNAVAILABLE:
-          errorText.fadeIn().text('Location information is unavailable.')
-          break;
+        errorText.fadeIn().text('Location information is unavailable.')
+        break;
 
       case error.TIMEOUT:
-          errorText.fadeIn().text('The request to get your location timed out.')
-          break;
+        errorText.fadeIn().text('The request to get your location timed out.')
+        break;
 
       case error.UNKNOWN_ERROR:
-          errorText.fadeIn().text('A crazy, unknown error occurred.')
-          break;
+        errorText.fadeIn().text('A crazy, unknown error occurred.')
+        break;
 
     }
 

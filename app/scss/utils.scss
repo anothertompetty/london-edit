@@ -3,6 +3,7 @@
 // SPACING
 
 // Margin
+
 .u-margin-Al {
   margin: $large-space;
 }
@@ -93,8 +94,8 @@
   margin-right: $small-space;
 }
 
-
 // Padding
+
 .u-padding-Al {
   padding: $large-space;
 }
@@ -264,17 +265,18 @@
 
 // TYPOGRAPHY
 
-h1 {
-  font-size: $large-space;
-}
-
 .u-text-body {
 	font-size: 16px;
 	line-height: 22px;
 }
 
 .u-text-small {
-  font-size: 12px;
+  font-size: $small-space;
+  line-height: 18px;
+}
+
+.u-text-large {
+  font-size: $large-space;
   line-height: 18px;
 }
 
@@ -289,5 +291,3 @@ h1 {
 .u-text-right {
   text-align: right;
 }
-
-// LINKS
