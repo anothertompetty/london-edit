@@ -47,6 +47,7 @@ $(document).on('ready', function() {
 
       function displayResults() {
 
+        $('.btn').focus();
         $('#top-result').fadeIn();
         $('.container__outside--output').fadeIn();
         $('#map').html('<img src=' + mapUrl + '>');
@@ -100,7 +101,7 @@ $(document).on('ready', function() {
 
     }); // close ajax call
 
-  }; //close main function
+  }; // close main function
 
   // Get user's location (start by checking if you can / are allowed)
 
